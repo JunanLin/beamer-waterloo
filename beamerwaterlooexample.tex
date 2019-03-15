@@ -1,0 +1,74 @@
+% Copyright 2019 by Junan Lin <junan_lin@hotmail.com>
+% This file may be distributed and/or modified under the MIT license
+% Reference: https://ramblingacademic.com/2015/12/08/how-to-quickly-overhaul-beamer-colors/
+\documentclass[xcolor=dvipsnames]{beamer}
+
+\mode<presentation>{\setbeamercovered{invisible}
+\usetheme{Madrid}
+}
+
+% Customize for Waterloo theme (gold and black)
+\definecolor{UWgold}{RGB}{254,209,66} % Waterloo gold
+\definecolor{darkgrey}{RGB}{169,169,169} 
+
+
+
+\setbeamercolor{palette primary}{bg=black,fg=UWgold}
+\setbeamercolor{palette secondary}{bg=white,fg=black}
+\setbeamercolor{palette tertiary}{bg=UWgold,fg=white}
+\setbeamercolor{palette quaternary}{bg=Black,fg=white}
+\setbeamercolor{structure}{fg=darkgrey} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=black} % TOC sections
+\setbeamercolor{subsection in head/foot}{bg=UWgold,fg=white}
+
+
+\usepackage{graphicx} % Allows including images
+\setbeamerfont{footnote}{size=\tiny}
+
+% Includes TOC at the begging of each section
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\title[Short-title]{An example of title}
+\author{The Author}
+\institute[UWaterloo]
+{University of Waterloo, Waterloo, ON, Canada\\
+\medskip
+\textit{your.email@uwaterloo.ca}
+}
+
+\date{\today}
+% \titlegraphic{\makebox[\linewidth]{\includegraphics[height=.13\textheight]{UniversityOfWaterloo_logo_horiz_rgb.png}
+\logo{\includegraphics[width=.25\paperwidth]{UniversityOfWaterloo_logo_horiz_rgb}}
+
+\begin{document}
+	
+\begin{frame}
+	\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+	\frametitle{Overview}
+	\tableofcontents
+\end{frame}
+
+\section{First section}
+\begin{frame}{Frame title}
+	Showing how itemization works:
+	\begin{itemize}
+		\item First item
+		\item Second item
+	\end{itemize}
+\end{frame}
+
+\section{Second section}
+\begin{frame}{Another title}
+	A slide with no additional information.
+\end{frame}
+
+\end{document}
